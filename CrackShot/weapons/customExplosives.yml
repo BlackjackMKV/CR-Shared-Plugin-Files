@@ -1,0 +1,118 @@
+OrbitalStrike:
+    Item_Information:
+        Item_Name: "&eOrbital Precision Strike"
+        Item_Type: 76
+        Item_Lore: "&eCalls in a orbital strike at the|&eposition of the thrown flare."
+        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Cancel_Right_Click_Interactions: true
+        Projectile_Amount: 1
+        Projectile_Type: flare
+        Projectile_Subtype: 76
+        Projectile_Speed: 10
+        Sounds_Shoot: FIRE_IGNITE-2-0-0,FIZZ-2-0-0
+    Airstrikes:
+        Enable: true
+        Flare_Activation_Delay: 60
+        Particle_Call_Airstrike: lightning
+        Message_Call_Airstrike: "&eFriendly orbital strike on the way."
+        Block_Type: 152
+        Area: 4
+        Distance_Between_Bombs: 2
+        Height_Dropped: 180
+        Vertical_Variation: 10
+        Horizontal_Variation: 10
+        Multiple_Strikes:
+            Enable: true
+            Number_Of_Strikes: 12
+            Delay_Between_Strikes: 20
+        Sounds_Airstrike: ENDERMAN_STARE-2-2-0
+    Explosions:
+        Enable: true
+        Explosion_No_Grief: true
+        Explosion_Radius: 6
+        Sounds_Explode: ENDERDRAGON_HIT-2-2-0
+    Extras:
+        One_Time_Use: true
+Nuke:
+    Item_Information:
+        Item_Name: "&eNuclear Missile"
+        Item_Type: 76
+        Item_Lore: "&eCalls in a tactical nuke at the|&eposition of the thrown flare."
+        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Cancel_Right_Click_Interactions: true
+        Projectile_Amount: 1
+        Projectile_Type: flare
+        Projectile_Subtype: 76
+        Projectile_Speed: 10
+        Sounds_Shoot: FIRE_IGNITE-2-0-0,FIZZ-2-0-0
+    Airstrikes:
+        Enable: true
+        Flare_Activation_Delay: 60
+        Particle_Call_Airstrike: lightning
+        Message_Call_Airstrike: "&eFriendly nuclear missile on the way."
+        Block_Type: 33
+        Area: 1
+        Distance_Between_Bombs: 4
+        Height_Dropped: 90
+        Vertical_Variation: 10
+        Horizontal_Variation: 0
+        Multiple_Strikes:
+            Enable: false
+            Number_Of_Strikes: 1
+            Delay_Between_Strikes: 20
+        Sounds_Airstrike: ENDERMAN_STARE-2-2-0
+    Explosions:
+        Enable: true
+        Ignite_Victims: 200
+        Damage_Multiplier: 200
+        Enable_Friendly_Fire: true
+        Explosion_Potion_Effect: CONFUSION-400-2
+        Explosion_No_Grief: true
+        Explosion_Radius: 20
+        Sounds_Explode: ENDERDRAGON_HIT-2-2-0
+    Extras:
+        One_Time_Use: true
+SkySword:
+    Item_Information:
+        Item_Name: "&eSky Sword Beacon"
+        Item_Type: 76
+        Item_Lore: "&eCalls in a strike from the Sky Sword at the|&eposition of the thrown flare."
+        Sounds_Acquired: BAT_TAKEOFF-1-1-0
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Cancel_Right_Click_Interactions: true
+        Projectile_Amount: 1
+        Projectile_Type: flare
+        Projectile_Subtype: 76
+        Projectile_Speed: 10
+        Sounds_Shoot: FIRE_IGNITE-2-0-0,FIZZ-2-0-0
+    Airstrikes:
+        Enable: true
+        Flare_Activation_Delay: 60
+        Particle_Call_Airstrike: lightning
+        Message_Call_Airstrike: "&eFriendly Sky Sword strike on the way."
+        Block_Type: 57
+        Area: 1
+        Distance_Between_Bombs: 0
+        Height_Dropped: 180
+        Vertical_Variation: 10
+        Horizontal_Variation: 0
+        Multiple_Strikes:
+            Enable: true
+            Number_Of_Strikes: 20
+            Delay_Between_Strikes: 5
+        Sounds_Airstrike: ENDERMAN_STARE-2-2-0
+    Explosions:
+        Enable: true
+        Explosion_No_Grief: true
+        Explosion_Radius: 20
+        Sounds_Explode: ENDERDRAGON_HIT-2-2-0
+    Extras:
+        One_Time_Use: true
