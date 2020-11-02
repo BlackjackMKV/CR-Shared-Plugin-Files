@@ -888,11 +888,14 @@ Magic Missile:
               data:
                 icon-key: ''
               children:
-                Particle Projectile-d:
+                Projectile-d:
                   type: 'mechanic'
                   data:
                     icon-key: ''
                     counts: 'True'
+                    projectile: 'Snowball'
+                    flaming: 'False'
+                    cost: ''
                     group: 'Enemy'
                     spread: 'Cone'
                     amount-base: 1
@@ -908,23 +911,6 @@ Magic Missile:
                     upward-scale: 0
                     right-base: 0
                     right-scale: 0
-                    gravity: -0.1
-                    pierce: 'False'
-                    particle: 'Cloud'
-                    arrangement: 'Circle'
-                    radius-base: 4
-                    radius-scale: 0
-                    particles-base: 20
-                    particles-scale: 0
-                    direction: 'XZ'
-                    visible-radius: 25
-                    dx: 0
-                    dy: 0
-                    dz: 0
-                    speed: 1
-                    amount: 1
-                    frequency: 0.05
-                    lifespan: 3
                     use-effect: 'False'
                   children:
                     Entity Type-e:
@@ -959,11 +945,14 @@ Magic Missile:
                                 value-scale: 5
                                 true: 'False'
                                 classifier: 'default'
-            Particle Projectile-i:
+            Projectile-i:
               type: 'mechanic'
               data:
                 icon-key: ''
                 counts: 'True'
+                projectile: 'Snowball'
+                flaming: 'False'
+                cost: ''
                 group: 'Enemy'
                 spread: 'Cone'
                 amount-base: 1
@@ -979,18 +968,6 @@ Magic Missile:
                 upward-scale: 0
                 right-base: 0
                 right-scale: 0
-                gravity: -0.1
-                pierce: 'False'
-                particle: 'Smoke'
-                arrangement: 'Circle'
-                radius-base: 4
-                radius-scale: 0
-                particles-base: 20
-                particles-scale: 0
-                direction: 'XZ'
-                data: 0
-                frequency: 0.05
-                lifespan: 3
                 use-effect: 'False'
               children:
                 Area-j:
