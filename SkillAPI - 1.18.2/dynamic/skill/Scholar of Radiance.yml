@@ -1,0 +1,75 @@
+Scholar of Radiance: 
+  name: 'Scholar of Radiance'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '0'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'BOOK'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '&eBeginning at 1st level, you take'
+  - '&e20% less damage from attacks'
+  - "&ewhenever you're in bright light."
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Passive-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'False'
+            seconds-base: '2'
+            seconds-scale: '0'
+            indicator: '2D'
+          children: 
+            Light-c: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                min-light-base: '8'
+                min-light-scale: '0'
+                max-light-base: '16'
+                max-light-scale: 'NaN'
+                indicator: '2D'
+              children: 
+                Buff-d: 
+                  type: 'mechanic'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    counts: 'False'
+                    immediate: 'False'
+                    type: 'DEFENSE'
+                    modifier: 'Multiplier'
+                    value-base: '0.8'
+                    value-scale: '0'
+                    seconds-base: '2'
+                    seconds-scale: '0'
+                    indicator: '2D'
+                  children:  {}

@@ -1,0 +1,161 @@
+loaded: 'true'
+Sea: 
+  name: 'Sea'
+  action-bar: ''
+  prefix: '&bSea'
+  group: 'domain'
+  mana: ''
+  max-level: 5
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    health-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Aquatic Adaption'
+  - 'Siren Song'
+  - 'Aquatic Evolution'
+  - 'Waterborne'
+  - 'Aquatic Superiority'
+  icon: 'LILY_PAD'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&dPlayers dedicated to the Sea domain'
+  - '&dwill triumph in bodies of water.'
+  exp-source: 273
+Sun: 
+  name: 'Sun'
+  action-bar: ''
+  prefix: '&eSun'
+  group: 'domain'
+  mana: ''
+  max-level: 5
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    health-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Scholar of Radiance'
+  - 'Inspire'
+  - 'Daydreamer'
+  - 'Traveller'
+  - 'Turn Undead'
+  icon: 'BEACON'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&dPlayers dedicated to the Sun domain'
+  - '&dgain the benefits needed to ward off'
+  - '&dnight creatures.'
+  exp-source: 273
+Cave: 
+  name: 'Cave'
+  action-bar: ''
+  prefix: '&7Cave'
+  group: 'domain'
+  mana: ''
+  max-level: 5
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    health-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 1.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Undervision'
+  - 'Shell of Protection'
+  - 'Cave Dweller'
+  - 'Blindsight'
+  - 'Dedication'
+  icon: 'IRON_PICKAXE'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&dPlayers dedicated to the Cave domain'
+  - '&dwill find it easier than usual living'
+  - '&dunderground.'
+  exp-source: 273
+Wizard: 
+  name: 'Wizard'
+  action-bar: ''
+  prefix: ''
+  group: 'class'
+  mana: '&2Mana'
+  max-level: 20
+  parent: ''
+  needs-permission: 'false'
+  attributes: 
+    health-base: '20'
+    health-scale: '0'
+    mana-base: '24'
+    mana-scale: '4'
+    vitality-base: '0'
+    vitality-scale: '0'
+    spirit-base: '0'
+    spirit-scale: '0'
+    intelligence-base: '0'
+    intelligence-scale: '0'
+    dexterity-base: '0'
+    dexterity-scale: '0'
+    strength-base: '0'
+    strength-scale: '0'
+  mana-regen: 0.0
+  tree: 'REQUIREMENT'
+  blacklist:  []
+  skills: 
+  - 'Magic Missile'
+  - 'Conjure Elements'
+  icon: 'STICK'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&dWizards devote their lives to studying '
+  - '&darcane magic. Their spells can change'
+  - '&dthe world around them.'
+  exp-source: 273

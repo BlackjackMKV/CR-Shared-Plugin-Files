@@ -1,0 +1,86 @@
+stCave: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      cave dweller: 9
+      shell of protection: 27
+      blindsight: 0
+      dedication: 18
+stSun: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      daydreamer: 0
+      inspire: 9
+      turn undead: 27
+      traveller: 18
+stSea: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      aquatic evolution: 0
+      waterborne: 27
+      aquatic superiority: 9
+      siren song: 18
+stSea Domain: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      aquatic evolution: 0
+      waterborne: 27
+      aquatic superiority: 9
+      siren song: 18
+stWizard: 
+  rows: 2
+  pages: 1
+  slots: 
+    1: 
+      magic missile: 9
+      conjure elements: 0
+CLASS_SELECTION: 
+  rows: 1
+  pages: 1
+  slots: 
+    1: 
+      warden: 0
+stCave Domain: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      cave dweller: 9
+      shell of protection: 27
+      blindsight: 0
+      dedication: 18
+stWarden: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      arrow volley: 14
+      blade combo: 12
+      knockout punch: 18
+      counter: 19
+      critical strike: 27
+      rope dart: 7
+      blade rush: 21
+      slowfall: 9
+      blade technique: 3
+      vitality training: 0
+      vigorous leap: 10
+      sharpshooter: 5
+      traveller: 1
+      arrow rush: 23
+stSun Domain: 
+  rows: 4
+  pages: 1
+  slots: 
+    1: 
+      daydreamer: 0
+      inspire: 9
+      turn undead: 27
+      traveller: 18

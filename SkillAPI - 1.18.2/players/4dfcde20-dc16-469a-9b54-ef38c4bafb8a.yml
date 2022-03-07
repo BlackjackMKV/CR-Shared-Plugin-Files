@@ -1,0 +1,29 @@
+limit: 3
+active: 1
+health: 20.0
+mana: 0.0
+accounts: 
+  acc1: 
+    classes: 
+      Cave: 
+        level: 2
+        points: 2
+        exp: 145.0
+    skills: 
+      Cave Dweller: 
+        level: 0
+        points: 0
+      Shell of Protection: 
+        level: 0
+        points: 0
+      Undervision: 
+        level: 1
+        points: 0
+      Blindsight: 
+        level: 0
+        points: 0
+      Dedication: 
+        level: 0
+        points: 0
+    binds:  {}
+    hunger: 1.0

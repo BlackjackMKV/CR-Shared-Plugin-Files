@@ -1,0 +1,100 @@
+Blindsight: 
+  name: 'Blindsight'
+  type: 'Passive'
+  max-level: 1
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  attributes: 
+    level-base: '1'
+    level-scale: '0'
+    cost-base: '1'
+    cost-scale: '0'
+    cooldown-base: '0'
+    cooldown-scale: '0'
+    mana-base: '0'
+    mana-scale: '0'
+    points-spent-req-base: '0'
+    points-spent-req-scale: '0'
+    incompatible: 
+    - ''
+  msg: '&6{player} &2has cast &6{skill}&r'
+  icon: 'NETHER_STAR'
+  icon-durability: 0
+  icon-data: 0
+  icon-lore: 
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&ePeriodically mark nearby non-allied'
+  - '&ecreatures while at y60 or below.'
+  desc:  []
+  components: 
+    Initialize: 
+      type: 'trigger'
+      indicator: '3D'
+      data: 
+        icon-key: ''
+        indicator: '2D'
+      children: 
+        Passive-b: 
+          type: 'mechanic'
+          indicator: '3D'
+          data: 
+            icon-key: ''
+            counts: 'False'
+            seconds-base: '6'
+            seconds-scale: '0'
+            indicator: '2D'
+          children: 
+            Water-c: 
+              type: 'condition'
+              indicator: '3D'
+              data: 
+                icon-key: ''
+                state: 'Out Of Water'
+                indicator: '2D'
+              children: 
+                Elevation-d: 
+                  type: 'condition'
+                  indicator: '3D'
+                  data: 
+                    icon-key: ''
+                    type: 'Normal'
+                    min-value-base: '0'
+                    min-value-scale: '0'
+                    max-value-base: '60'
+                    max-value-scale: '0'
+                    indicator: '2D'
+                  children: 
+                    Area-e: 
+                      type: 'target'
+                      indicator: '3D'
+                      data: 
+                        icon-key: ''
+                        radius-base: '16'
+                        radius-scale: '0'
+                        group: 'Enemy'
+                        wall: 'True'
+                        caster: 'False'
+                        max-base: '99'
+                        max-scale: '0'
+                        random: 'False'
+                        indicator: '2D'
+                      children: 
+                        Potion-f: 
+                          type: 'mechanic'
+                          indicator: '3D'
+                          data: 
+                            icon-key: ''
+                            counts: 'False'
+                            potion: 'Glowing'
+                            ambient: 'False'
+                            tier-base: '1'
+                            tier-scale: '0'
+                            seconds-base: '6'
+                            seconds-scale: '0'
+                            indicator: '2D'
+                          children:  {}
