@@ -1,7 +1,7 @@
 loaded: false
-Merfolk:
-  name: 'Merfolk'
-  prefix: '&6M'
+Angel:
+  name: 'Angel'
+  prefix: '&6A'
   group: 'Race'
   mana: '&2Mana'
   max-level: 1
@@ -11,11 +11,122 @@ Merfolk:
   mana-regen: 1
   tree: 'Requirement'
   skills:
-  - 'Gills'
-  - 'Natural Habitat'
-  - 'Fins For Feet'
-  - 'Natural Talent'
-  icon: 'Salmon'
+  - 'Graceful'
+  - 'Righteous'
+  - 'Savior'
+  icon: 'Iron sword'
+  icon-data: 0
+  icon-lore:
+  - '&dClass 1'
+  blacklist:
+  - ''
+  action-bar: ''
+  attributes:
+    health-base: 20
+    health-scale: 0
+    mana-base: 20
+    mana-scale: 0
+    vitality-base: 0
+    vitality-scale: 0
+    spirit-base: 0
+    spirit-scale: 0
+    intelligence-base: 0
+    intelligence-scale: 0
+    dexterity-base: 0
+    dexterity-scale: 0
+    strength-base: 0
+    strength-scale: 0
+Arcanic Golem:
+  name: 'Arcanic Golem'
+  prefix: '&6AG'
+  group: 'Race'
+  mana: '&2Mana'
+  max-level: 1
+  parent: ''
+  needs-permission: 'False'
+  exp-source: 273
+  mana-regen: 1
+  tree: 'Requirement'
+  skills:
+  - 'Iron Skin'
+  - 'Iron Stomach'
+  - 'Iron Heart'
+  icon: 'Iron block'
+  icon-data: 0
+  icon-lore:
+  - '&dClass 1'
+  blacklist:
+  - ''
+  action-bar: ''
+  attributes:
+    health-base: 100
+    health-scale: 0
+    mana-base: 20
+    mana-scale: 0
+    vitality-base: 0
+    vitality-scale: 0
+    spirit-base: 0
+    spirit-scale: 0
+    intelligence-base: 0
+    intelligence-scale: 0
+    dexterity-base: 0
+    dexterity-scale: 0
+    strength-base: 0
+    strength-scale: 0
+Fae:
+  name: 'Fae'
+  prefix: '&6F'
+  group: 'Race'
+  mana: '&2Mana'
+  max-level: 1
+  parent: ''
+  needs-permission: 'False'
+  exp-source: 273
+  mana-regen: 1
+  tree: 'Requirement'
+  skills:
+  - 'Fairy Wings'
+  - 'Tiny Body'
+  - 'Base Weakness'
+  icon: 'Emerald ore'
+  icon-data: 0
+  icon-lore:
+  - '&dClass 1'
+  blacklist:
+  - ''
+  action-bar: ''
+  attributes:
+    health-base: 20
+    health-scale: 0
+    mana-base: 20
+    mana-scale: 0
+    vitality-base: 0
+    vitality-scale: 0
+    spirit-base: 0
+    spirit-scale: 0
+    intelligence-base: 0
+    intelligence-scale: 0
+    dexterity-base: 0
+    dexterity-scale: 0
+    strength-base: 0
+    strength-scale: 0
+Zombie:
+  name: 'Zombie'
+  prefix: '&6Z'
+  group: 'Race'
+  mana: '&2Mana'
+  max-level: 1
+  parent: ''
+  needs-permission: 'False'
+  exp-source: 273
+  mana-regen: 1
+  tree: 'Requirement'
+  skills:
+  - 'Hunger Stomach'
+  - 'Weak Flesh'
+  - 'Infectious'
+  - 'Friendly Undead'
+  icon: 'Rotten flesh'
   icon-data: 0
   icon-lore:
   - '&dClass 1'
