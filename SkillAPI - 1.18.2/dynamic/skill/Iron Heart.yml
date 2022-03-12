@@ -1,0 +1,110 @@
+Iron Heart:
+  name: 'Iron Heart'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Golden apple'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Right Click-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        crouch: 'Both'
+      children:
+        Item-b:
+          type: 'condition'
+          data:
+            icon-key: ''
+            check-mat: 'True'
+            material: 'Iron ingot'
+            check-data: 'False'
+            check-lore: 'False'
+            check-name: 'False'
+            regex: 'False'
+          children:
+            Food-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'False'
+                food-base: 5
+                food-scale: 1
+                saturation-base: 5
+                saturation-scale: 0
+            Sound-d:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                sound: 'Block anvil place'
+                volume-base: 25
+                volume-scale: 0
+                pitch-base: 1
+                pitch-scale: 0
+            Sound-e:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                sound: 'Block anvil place'
+                volume-base: 25
+                volume-scale: 0
+                pitch-base: 1
+                pitch-scale: 0
+            Inventory-f:
+              type: 'condition'
+              data:
+                icon-key: ''
+                amount-base: 1
+                amount-scale: 0
+                check-mat: 'True'
+                material: 'Iron ingot'
+                check-data: 'False'
+                check-lore: 'False'
+                check-name: 'False'
+                regex: 'False'
+              children:
+                Item Remove-g:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'False'
+                    amount-base: 1
+                    amount-scale: 0
+                    check-mat: 'True'
+                    material: 'Iron ingot'
+                    check-data: 'False'
+                    check-lore: 'False'
+                    check-name: 'False'
+                    regex: 'False'

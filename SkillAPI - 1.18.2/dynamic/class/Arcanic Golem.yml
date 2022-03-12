@@ -1,0 +1,37 @@
+Arcanic Golem:
+  name: 'Arcanic Golem'
+  prefix: '&6AG'
+  group: 'Race'
+  mana: '&2Mana'
+  max-level: 1
+  parent: ''
+  needs-permission: 'False'
+  exp-source: 273
+  mana-regen: 1
+  tree: 'Requirement'
+  skills:
+  - 'Iron Skin'
+  - 'Iron Stomach'
+  - 'Iron Heart'
+  icon: 'Iron block'
+  icon-data: 0
+  icon-lore:
+  - '&dClass 1'
+  blacklist:
+  - ''
+  action-bar: ''
+  attributes:
+    health-base: 100
+    health-scale: 0
+    mana-base: 20
+    mana-scale: 0
+    vitality-base: 0
+    vitality-scale: 0
+    spirit-base: 0
+    spirit-scale: 0
+    intelligence-base: 0
+    intelligence-scale: 0
+    dexterity-base: 0
+    dexterity-scale: 0
+    strength-base: 0
+    strength-scale: 0
