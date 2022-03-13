@@ -115,33 +115,28 @@ Fairy Wings:
     incompatible:
     - ''
   components:
-    Crouch-a:
+    Initialize-a:
       type: 'trigger'
       data:
         icon-key: ''
-        mana: 'False'
-        cooldown: 'False'
-        type: 'Start Crouching'
       children:
-        Passive-b:
-          type: 'mechanic'
+        Crouch-b:
+          type: 'condition'
           data:
             icon-key: ''
-            counts: 'False'
-            seconds-base: 1
-            seconds-scale: 0
+            crouch: 'True'
           children:
             Potion-c:
               type: 'mechanic'
               data:
                 icon-key: ''
-                counts: 'True'
+                counts: 'False'
                 potion: 'Slow falling'
                 ambient: 'True'
                 tier-base: 1
                 tier-scale: 0
-                seconds-base: 1
-                seconds-scale: 0
+                seconds-base: 5
+                seconds-scale: 1
 Fins For Feet:
   name: 'Fins For Feet'
   type: 'Passive'
@@ -453,11 +448,13 @@ Hunger Stomach:
                 max-rank-base: 999
                 max-rank-scale: 0
               children:
-                Cancel-d:
+                Cleanse-d:
                   type: 'mechanic'
                   data:
                     icon-key: ''
                     counts: 'False'
+                    potion: 'Hunger'
+                    status: ''
 Infectious:
   name: 'Infectious'
   type: 'Passive'
@@ -1129,26 +1126,18 @@ Tiny Body:
         dmg-min: 0
         dmg-max: 999
       children:
-        Passive-b:
-          type: 'mechanic'
+        Chance-b:
+          type: 'condition'
           data:
             icon-key: ''
-            counts: 'True'
-            seconds-base: 1
-            seconds-scale: 0
+            chance-base: 25
+            chance-scale: 0
           children:
-            Chance-c:
-              type: 'condition'
+            Cancel-c:
+              type: 'mechanic'
               data:
                 icon-key: ''
-                chance-base: 10
-                chance-scale: 0
-              children:
-                Cancel-d:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'False'
+                counts: 'False'
 Weak Flesh:
   name: 'Weak Flesh'
   type: 'Passive'
@@ -1210,7 +1199,7 @@ Weak Flesh:
                     icon-key: ''
                     distance-base: 100
                     distance-scale: 0
-                    at-least: 'False'
+                    at-least: 'True'
                   children:
                     Fire-e:
                       type: 'mechanic'
@@ -1221,101 +1210,3 @@ Weak Flesh:
                         damage-scale: 0
                         seconds-base: 3
                         seconds-scale: 1
-Weeaak Fleesh:
-  name: 'Weeaak Fleesh'
-  type: 'Passive'
-  max-level: 1
-  skill-req: ''
-  skill-req-lvl: 1
-  needs-permission: 'False'
-  cooldown-message: 'True'
-  msg: '&6{player} &2has cast &6{skill}'
-  combo: ''
-  indicator: '2D'
-  icon: 'Jack o lantern'
-  icon-data: 0
-  icon-lore:
-  - '&d{name} &7({level}/{max})'
-  - '&2Type: &6{type}'
-  - ''
-  - '{req:level}Level: {attr:level}'
-  - '{req:cost}Cost: {attr:cost}'
-  - ''
-  - '&2Mana: {attr:mana}'
-  - '&2Cooldown: {attr:cooldown}'
-  attributes:
-    level-base: 1
-    level-scale: 0
-    cost-base: 0
-    cost-scale: 0
-    cooldown-base: 0
-    cooldown-scale: 0
-    mana-base: 0
-    mana-scale: 0
-    points-spent-req-base: 0
-    points-spent-req-scale: 0
-    incompatible:
-    - ''
-  components:
-    Initialize-a:
-      type: 'trigger'
-      data:
-        icon-key: ''
-      children:
-        Passive-b:
-          type: 'mechanic'
-          data:
-            icon-key: ''
-            counts: 'True'
-            seconds-base: 1
-            seconds-scale: 0
-          children:
-            Time-c:
-              type: 'condition'
-              data:
-                icon-key: ''
-                time: 'Day'
-              children:
-                Fire-d:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    damage-base: 1
-                    damage-scale: 0
-                    seconds-base: 5
-                    seconds-scale: 1
-                Flag-e:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    key: 'Fire'
-                    seconds-base: 1
-                    seconds-scale: 1
-            Flag-f:
-              type: 'condition'
-              data:
-                icon-key: ''
-                type: 'Set'
-                key: 'Fire'
-              children:
-                Ceiling-g:
-                  type: 'condition'
-                  data:
-                    icon-key: ''
-                    distance-base: 100
-                    distance-scale: 0
-                    at-least: 'False'
-                  children:
-                    Fire-h:
-                      type: 'condition'
-                      data:
-                        icon-key: ''
-                        type: 'On Fire'
-                      children:
-                        Cancel-i:
-                          type: 'mechanic'
-                          data:
-                            icon-key: ''
-                            counts: 'False'
