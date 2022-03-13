@@ -40,39 +40,31 @@ Base Weakness:
       data:
         icon-key: ''
       children:
-        Passive-b:
-          type: 'mechanic'
+        Entity Type-b:
+          type: 'condition'
           data:
             icon-key: ''
-            counts: 'False'
-            seconds-base: 1
-            seconds-scale: 0
+            types:
+            - 'Player'
           children:
-            Entity Type-c:
+            Tool-c:
               type: 'condition'
               data:
                 icon-key: ''
-                types:
-                - 'Player'
+                material: 'Iron'
+                tool: 'Any'
               children:
-                Tool-d:
-                  type: 'condition'
+                Damage Buff-d:
+                  type: 'mechanic'
                   data:
                     icon-key: ''
-                    material: 'Iron'
-                    tool: 'Any'
-                  children:
-                    Defense Buff-e:
-                      type: 'mechanic'
-                      data:
-                        icon-key: ''
-                        counts: 'False'
-                        type: 'Multiplier'
-                        skill: 'False'
-                        value-base: 2
-                        value-scale: 0
-                        seconds-base: 3
-                        seconds-scale: 0
+                    counts: 'True'
+                    type: 'Flat'
+                    skill: 'False'
+                    value-base: 2
+                    value-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 0
 Fairy Wings:
   name: 'Fairy Wings'
   type: 'Passive'
@@ -120,40 +112,17 @@ Fairy Wings:
             icon-key: ''
             crouch: 'True'
           children:
-            Flag-c:
+            Potion-c:
               type: 'mechanic'
               data:
                 icon-key: ''
-                counts: 'False'
-                key: 'slowfall'
-                seconds-base: 1
+                counts: 'True'
+                potion: 'Slow falling'
+                ambient: 'True'
+                tier-base: 1
+                tier-scale: 0
+                seconds-base: 5
                 seconds-scale: 1
-        Flag-d:
-          type: 'condition'
-          data:
-            icon-key: ''
-            type: 'Set'
-            key: 'slowfall'
-          children:
-            Passive-e:
-              type: 'mechanic'
-              data:
-                icon-key: ''
-                counts: 'False'
-                seconds-base: 1
-                seconds-scale: 0
-              children:
-                Potion-f:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'False'
-                    potion: 'Slow falling'
-                    ambient: 'True'
-                    tier-base: 1
-                    tier-scale: 0
-                    seconds-base: 5
-                    seconds-scale: 1
 Fins For Feet:
   name: 'Fins For Feet'
   type: 'Passive'
@@ -505,28 +474,36 @@ Infectious:
     incompatible:
     - ''
   components:
-    Kill-a:
+    Initialize-a:
       type: 'trigger'
       data:
         icon-key: ''
-        mana: 'False'
-        cooldown: 'False'
       children:
         Entity Type-b:
           type: 'condition'
           data:
             icon-key: ''
             types:
-            - 'Villager'
             - 'Player'
+            - 'Villager'
           children:
-            Command-c:
-              type: 'mechanic'
+            Health-c:
+              type: 'condition'
               data:
                 icon-key: ''
-                counts: 'False'
-                command: 'spawnmob zombie 1'
-                type: 'OP'
+                type: 'Health'
+                min-value-base: 0
+                min-value-scale: 0
+                max-value-base: 0
+                max-value-scale: 2
+              children:
+                Command-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    command: 'spawnmob zombie 1'
+                    type: 'OP'
 Iron Heart:
   name: 'Iron Heart'
   type: 'Passive'
@@ -587,9 +564,9 @@ Iron Heart:
               data:
                 icon-key: ''
                 counts: 'False'
-                food-base: 5
+                food-base: 0
                 food-scale: 1
-                saturation-base: 5
+                saturation-base: 6
                 saturation-scale: 0
             Sound-d:
               type: 'mechanic'
@@ -761,9 +738,9 @@ Iron Stomach:
               type: 'mechanic'
               data:
                 icon-key: ''
-                counts: 'True'
-                food-base: 20
-                food-scale: 1
+                counts: 'False'
+                food-base: 10
+                food-scale: 0
                 saturation-base: 0
                 saturation-scale: 0
 Natural Habitat:
@@ -1321,7 +1298,7 @@ Weak Flesh:
           type: 'mechanic'
           data:
             icon-key: ''
-            counts: 'True'
+            counts: 'False'
             seconds-base: 1
             seconds-scale: 0
           children:
@@ -1331,49 +1308,17 @@ Weak Flesh:
                 icon-key: ''
                 time: 'Day'
               children:
-                Fire-d:
-                  type: 'mechanic'
+                Self-d:
+                  type: 'target'
                   data:
                     icon-key: ''
-                    counts: 'False'
-                    damage-base: 2
-                    damage-scale: 0
-                    seconds-base: 1
-                    seconds-scale: 1
-            Armor-e:
-              type: 'condition'
-              data:
-                icon-key: ''
-                armor: 'Helmet'
-                check-mat: 'False'
-                check-data: 'False'
-                check-lore: 'False'
-                check-name: 'False'
-                regex: 'False'
-              children:
-                Flag-f:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    key: 'unburn'
-                    seconds-base: 1
-                    seconds-scale: 1
-                Flag-g:
-                  type: 'condition'
-                  data:
-                    icon-key: ''
-                    type: 'Not Set'
-                    key: 'unburn'
                   children:
-                    Fire-h:
-                      type: 'condition'
+                    Fire-e:
+                      type: 'mechanic'
                       data:
                         icon-key: ''
-                        type: 'On Fire'
-                      children:
-                        Cancel-i:
-                          type: 'mechanic'
-                          data:
-                            icon-key: ''
-                            counts: 'False'
+                        counts: 'False'
+                        damage-base: 1
+                        damage-scale: 0
+                        seconds-base: 5
+                        seconds-scale: 1
