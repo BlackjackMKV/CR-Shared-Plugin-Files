@@ -47,14 +47,20 @@ Gills:
             seconds-base: 1
             seconds-scale: 0
           children:
-            Potion-c:
-              type: 'mechanic'
+            Water-c:
+              type: 'condition'
               data:
                 icon-key: ''
-                counts: 'True'
-                potion: 'Water breathing'
-                ambient: 'True'
-                tier-base: 1
-                tier-scale: 0
-                seconds-base: 5
-                seconds-scale: 1
+                state: 'In Water'
+              children:
+                Potion-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Water breathing'
+                    ambient: 'True'
+                    tier-base: 1
+                    tier-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 1

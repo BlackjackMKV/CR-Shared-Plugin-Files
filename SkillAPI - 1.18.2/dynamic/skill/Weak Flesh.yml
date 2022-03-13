@@ -23,7 +23,7 @@ Weak Flesh:
   attributes:
     level-base: 1
     level-scale: 0
-    cost-base: 1
+    cost-base: 0
     cost-scale: 0
     cooldown-base: 0
     cooldown-scale: 0
@@ -53,7 +53,31 @@ Weak Flesh:
                 icon-key: ''
                 time: 'Day'
               children:
-                Ceiling-d:
+                Fire-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    damage-base: 1
+                    damage-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 1
+                Flag-e:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    key: 'Fire'
+                    seconds-base: 1
+                    seconds-scale: 1
+            Flag-f:
+              type: 'condition'
+              data:
+                icon-key: ''
+                type: 'Set'
+                key: 'Fire'
+              children:
+                Ceiling-g:
                   type: 'condition'
                   data:
                     icon-key: ''
@@ -61,34 +85,14 @@ Weak Flesh:
                     distance-scale: 0
                     at-least: 'False'
                   children:
-                    Fire-e:
-                      type: 'mechanic'
-                      data:
-                        icon-key: ''
-                        counts: 'True'
-                        damage-base: 1
-                        damage-scale: 0
-                        seconds-base: 5
-                        seconds-scale: 1
-                    Armor-f:
+                    Fire-h:
                       type: 'condition'
                       data:
                         icon-key: ''
-                        armor: 'Helmet'
-                        check-mat: 'False'
-                        check-data: 'False'
-                        check-lore: 'False'
-                        check-name: 'False'
-                        regex: 'False'
+                        type: 'On Fire'
                       children:
-                        Fire-g:
-                          type: 'condition'
+                        Cancel-i:
+                          type: 'mechanic'
                           data:
                             icon-key: ''
-                            type: 'On Fire'
-                          children:
-                            Cancel-h:
-                              type: 'mechanic'
-                              data:
-                                icon-key: ''
-                                counts: 'False'
+                            counts: 'False'
