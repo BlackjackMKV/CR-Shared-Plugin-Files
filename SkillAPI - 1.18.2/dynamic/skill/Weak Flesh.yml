@@ -23,7 +23,7 @@ Weak Flesh:
   attributes:
     level-base: 1
     level-scale: 0
-    cost-base: 1
+    cost-base: 0
     cost-scale: 0
     cooldown-base: 0
     cooldown-scale: 0
