@@ -1,7 +1,7 @@
 Weak Flesh:
   name: 'Weak Flesh'
-  type: 'Dynamic'
-  max-level: 5
+  type: 'Passive'
+  max-level: 1
   skill-req: ''
   skill-req-lvl: 1
   needs-permission: 'False'
