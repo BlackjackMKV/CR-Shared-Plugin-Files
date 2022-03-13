@@ -54,7 +54,7 @@ Revivable:
                 type: 'Health'
                 min-value-base: 1
                 min-value-scale: 0
-                max-value-base: 2
+                max-value-base: 4
                 max-value-scale: 2
               children:
                 Heal-d:
@@ -87,7 +87,7 @@ Revivable:
                     type: 'Health'
                     min-value-base: 1
                     min-value-scale: 0
-                    max-value-base: 2
+                    max-value-base: 4
                     max-value-scale: 2
                   children:
                     Heal-h:

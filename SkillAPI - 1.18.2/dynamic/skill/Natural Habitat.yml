@@ -68,7 +68,7 @@ Natural Habitat:
                   type: 'mechanic'
                   data:
                     icon-key: ''
-                    counts: 'True'
+                    counts: 'False'
                     potion: 'Dolphins grace'
                     ambient: 'True'
                     tier-base: 3
