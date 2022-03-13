@@ -59,7 +59,7 @@ Weak Flesh:
                     icon-key: ''
                     distance-base: 100
                     distance-scale: 0
-                    at-least: 'False'
+                    at-least: 'True'
                   children:
                     Fire-e:
                       type: 'mechanic'

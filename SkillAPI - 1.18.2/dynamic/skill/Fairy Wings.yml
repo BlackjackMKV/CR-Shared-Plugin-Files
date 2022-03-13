@@ -34,30 +34,25 @@ Fairy Wings:
     incompatible:
     - ''
   components:
-    Crouch-a:
+    Initialize-a:
       type: 'trigger'
       data:
         icon-key: ''
-        mana: 'False'
-        cooldown: 'False'
-        type: 'Start Crouching'
       children:
-        Passive-b:
-          type: 'mechanic'
+        Crouch-b:
+          type: 'condition'
           data:
             icon-key: ''
-            counts: 'False'
-            seconds-base: 1
-            seconds-scale: 0
+            crouch: 'True'
           children:
             Potion-c:
               type: 'mechanic'
               data:
                 icon-key: ''
-                counts: 'True'
+                counts: 'False'
                 potion: 'Slow falling'
                 ambient: 'True'
                 tier-base: 1
                 tier-scale: 0
-                seconds-base: 1
-                seconds-scale: 0
+                seconds-base: 5
+                seconds-scale: 1
