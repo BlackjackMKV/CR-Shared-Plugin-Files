@@ -53,31 +53,7 @@ Weak Flesh:
                 icon-key: ''
                 time: 'Day'
               children:
-                Fire-d:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    damage-base: 1
-                    damage-scale: 0
-                    seconds-base: 5
-                    seconds-scale: 1
-                Flag-e:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    key: 'Fire'
-                    seconds-base: 1
-                    seconds-scale: 1
-            Flag-f:
-              type: 'condition'
-              data:
-                icon-key: ''
-                type: 'Set'
-                key: 'Fire'
-              children:
-                Ceiling-g:
+                Ceiling-d:
                   type: 'condition'
                   data:
                     icon-key: ''
@@ -85,14 +61,12 @@ Weak Flesh:
                     distance-scale: 0
                     at-least: 'False'
                   children:
-                    Fire-h:
-                      type: 'condition'
+                    Fire-e:
+                      type: 'mechanic'
                       data:
                         icon-key: ''
-                        type: 'On Fire'
-                      children:
-                        Cancel-i:
-                          type: 'mechanic'
-                          data:
-                            icon-key: ''
-                            counts: 'False'
+                        counts: 'False'
+                        damage-base: 1
+                        damage-scale: 0
+                        seconds-base: 3
+                        seconds-scale: 1
