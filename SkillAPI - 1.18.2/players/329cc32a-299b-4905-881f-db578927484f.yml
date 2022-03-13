@@ -1,10 +1,25 @@
 limit: 3
 active: 1
-health: 20.0
-mana: 0.0
+health: 100.0
+mana: 20.0
 accounts: 
   acc1: 
-    classes:  {}
-    skills:  {}
+    classes: 
+      Arcanic Golem: 
+        level: 1
+        points: 1
+        exp: 0.0
+    skills: 
+      Iron Heart: 
+        level: 1
+        points: 0
+      Iron Stomach: 
+        level: 1
+        points: 0
+      Iron Skin: 
+        level: 1
+        points: 0
     binds:  {}
+    attrib-points: 0
+    attribs:  {}
     hunger: 1.0

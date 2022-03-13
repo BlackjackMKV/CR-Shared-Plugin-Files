@@ -1,10 +1,28 @@
 limit: 3
 active: 1
 health: 20.0
-mana: 0.0
+mana: 20.0
 accounts: 
   acc1: 
-    classes:  {}
-    skills:  {}
+    classes: 
+      Zombie: 
+        level: 1
+        points: 1
+        exp: 0.0
+    skills: 
+      Hunger Stomach: 
+        level: 1
+        points: 0
+      Infectious: 
+        level: 1
+        points: 0
+      Friendly Undead: 
+        level: 1
+        points: 0
+      Weak Flesh: 
+        level: 0
+        points: 0
     binds:  {}
+    attrib-points: 0
+    attribs:  {}
     hunger: 1.0
