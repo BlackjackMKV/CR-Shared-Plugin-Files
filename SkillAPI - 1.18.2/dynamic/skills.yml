@@ -35,36 +35,35 @@ Base Weakness:
     incompatible:
     - ''
   components:
-    Initialize-a:
+    Took Physical Damage-a:
       type: 'trigger'
       data:
         icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'True'
+        type: 'Melee'
+        dmg-min: 0
+        dmg-max: 999
       children:
-        Entity Type-b:
+        Tool-b:
           type: 'condition'
           data:
             icon-key: ''
-            types:
-            - 'Player'
+            material: 'Iron'
+            tool: 'Any'
           children:
-            Tool-c:
-              type: 'condition'
+            Defense Buff-c:
+              type: 'mechanic'
               data:
                 icon-key: ''
-                material: 'Iron'
-                tool: 'Any'
-              children:
-                Damage Buff-d:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    type: 'Flat'
-                    skill: 'False'
-                    value-base: 2
-                    value-scale: 0
-                    seconds-base: 5
-                    seconds-scale: 0
+                counts: 'True'
+                type: 'Flat'
+                skill: 'False'
+                value-base: 2
+                value-scale: 0
+                seconds-base: 1
+                seconds-scale: 0
 Fairy Wings:
   name: 'Fairy Wings'
   type: 'Passive'
@@ -566,7 +565,7 @@ Iron Heart:
                 counts: 'False'
                 food-base: 0
                 food-scale: 1
-                saturation-base: 6
+                saturation-base: 5
                 saturation-scale: 0
             Sound-d:
               type: 'mechanic'
@@ -739,7 +738,7 @@ Iron Stomach:
               data:
                 icon-key: ''
                 counts: 'False'
-                food-base: 10
+                food-base: 5
                 food-scale: 0
                 saturation-base: 0
                 saturation-scale: 0
