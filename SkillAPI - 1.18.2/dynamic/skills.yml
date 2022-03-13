@@ -62,7 +62,7 @@ Base Weakness:
                 skill: 'False'
                 value-base: 2
                 value-scale: 0
-                seconds-base: 1
+                seconds-base: 5
                 seconds-scale: 0
 Fairy Wings:
   name: 'Fairy Wings'
@@ -100,13 +100,76 @@ Fairy Wings:
     incompatible:
     - ''
   components:
-    Crouch-a:
+    Initialize-a:
       type: 'trigger'
       data:
         icon-key: ''
-        mana: 'False'
-        cooldown: 'False'
-        type: 'Start Crouching'
+      children:
+        Crouch-b:
+          type: 'condition'
+          data:
+            icon-key: ''
+            crouch: 'True'
+          children:
+            Passive-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'False'
+                seconds-base: 1
+                seconds-scale: 0
+              children:
+                Potion-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'False'
+                    potion: 'Slow falling'
+                    ambient: 'True'
+                    tier-base: 1
+                    tier-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 1
+Fins For Feet:
+  name: 'Fins For Feet'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
       children:
         Passive-b:
           type: 'mechanic'
@@ -116,17 +179,31 @@ Fairy Wings:
             seconds-base: 1
             seconds-scale: 0
           children:
-            Potion-c:
-              type: 'mechanic'
+            Water-c:
+              type: 'condition'
               data:
                 icon-key: ''
-                counts: 'True'
-                potion: 'Slow falling'
-                ambient: 'True'
-                tier-base: 1
-                tier-scale: 0
-                seconds-base: 1
-                seconds-scale: 0
+                state: 'Out Of Water'
+              children:
+                Delay-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'False'
+                    delay-base: 3
+                    delay-scale: 0
+                  children:
+                    Potion-e:
+                      type: 'mechanic'
+                      data:
+                        icon-key: ''
+                        counts: 'False'
+                        potion: 'Slow'
+                        ambient: 'False'
+                        tier-base: 2
+                        tier-scale: 0
+                        seconds-base: 5
+                        seconds-scale: 1
 Friendly Undead:
   name: 'Friendly Undead'
   type: 'Passive'
@@ -181,6 +258,66 @@ Friendly Undead:
               data:
                 icon-key: ''
                 types:
+Gills:
+  name: 'Gills'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Iron bars'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Potion-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                potion: 'Water breathing'
+                ambient: 'True'
+                tier-base: 1
+                tier-scale: 0
+                seconds-base: 1
+                seconds-scale: 1
 Graceful:
   name: 'Graceful'
   type: 'Passive'
@@ -298,11 +435,13 @@ Hunger Stomach:
                 max-rank-base: 999
                 max-rank-scale: 0
               children:
-                Cancel-d:
+                Cleanse-d:
                   type: 'mechanic'
                   data:
                     icon-key: ''
                     counts: 'False'
+                    potion: 'Hunger'
+                    status: ''
 Infectious:
   name: 'Infectious'
   type: 'Passive'
@@ -359,7 +498,7 @@ Infectious:
               data:
                 icon-key: ''
                 counts: 'False'
-                command: '/spawn zombie'
+                command: '/spawnmob zombie 1'
                 type: 'OP'
 Iron Heart:
   name: 'Iron Heart'
@@ -527,10 +666,173 @@ Iron Skin:
                 counts: 'False'
                 type: 'Multiplier'
                 skill: 'False'
-                value-base: 0.60
+                value-base: 0.6
                 value-scale: 0
                 seconds-base: 1
                 seconds-scale: 0
+Natural Habitat:
+  name: 'Natural Habitat'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Water-c:
+              type: 'condition'
+              data:
+                icon-key: ''
+                state: 'In Water'
+              children:
+                Potion-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Fast digging'
+                    ambient: 'False'
+                    tier-base: 3
+                    tier-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 1
+        Passive-e:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Water-f:
+              type: 'condition'
+              data:
+                icon-key: ''
+                state: 'In Water'
+              children:
+                Potion-g:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Speed'
+                    ambient: 'True'
+                    tier-base: 3
+                    tier-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 1
+Natural Talent:
+  name: 'Natural Talent'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Trident'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Item-c:
+              type: 'condition'
+              data:
+                icon-key: ''
+                check-mat: 'True'
+                material: 'Trident'
+                check-data: 'False'
+                check-lore: 'False'
+                check-name: 'False'
+                regex: 'False'
+              children:
+                Attribute-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'False'
+                    key: 'Strength'
+                    operation: 'ADD_NUMBER'
+                    amount-base: 5
+                    amount-scale: 2
+                    seconds-base: 5
+                    seconds-scale: 0
+                    stackable: 'True'
 Revivable:
   name: 'Revivable'
   type: 'Passive'
@@ -653,96 +955,6 @@ Revivable:
                     key: 'revive'
                     amount-base: 1
                     amount-scale: 0
-    Took Physical Damage-l:
-      type: 'trigger'
-      data:
-        icon-key: ''
-        mana: 'False'
-        cooldown: 'False'
-        target: 'True'
-        type: 'Both'
-        dmg-min: 20
-        dmg-max: 999
-      children:
-        Passive-m:
-          type: 'mechanic'
-          data:
-            icon-key: ''
-            counts: 'False'
-            seconds-base: 1
-            seconds-scale: 0
-          children:
-            Value Set-n:
-              type: 'mechanic'
-              data:
-                icon-key: ''
-                counts: 'True'
-                key: 'revives'
-                value-base: 3
-                value-scale: 0
-            Flag-o:
-              type: 'mechanic'
-              data:
-                icon-key: ''
-                counts: 'True'
-                key: 'alive'
-                seconds-base: 1
-                seconds-scale: 1
-            Flag-p:
-              type: 'condition'
-              data:
-                icon-key: ''
-                type: 'Not Set'
-                key: 'alive'
-              children:
-                Cancel-q:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'False'
-                Potion-r:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    potion: 'Regeneration'
-                    ambient: 'True'
-                    tier-base: 3
-                    tier-scale: 0
-                    seconds-base: 10
-                    seconds-scale: 1
-                Value Add-s:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    key: 'revives'
-                    amount-base: -1
-                    amount-scale: 0
-        Passive-t:
-          type: 'mechanic'
-          data:
-            icon-key: ''
-            counts: 'False'
-            seconds-base: 1
-            seconds-scale: 0
-          children:
-            Delay-u:
-              type: 'mechanic'
-              data:
-                icon-key: ''
-                counts: 'False'
-                delay-base: 1200
-                delay-scale: 0
-              children:
-                Value Add-v:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    key: 'revive'
-                    amount-base: 1
-                    amount-scale: 0
 Righteous:
   name: 'Righteous'
   type: 'Passive'
@@ -820,7 +1032,7 @@ Righteous:
                     skill: 'False'
                     value-base: 5
                     value-scale: 0
-                    seconds-base: 1
+                    seconds-base: 5
                     seconds-scale: 0
 Savior:
   name: 'Savior'
@@ -886,7 +1098,7 @@ Savior:
                 counts: 'False'
                 potion: 'Absorption'
                 ambient: 'True'
-                tier-base: 2
+                tier-base: 5
                 tier-scale: 0
                 seconds-base: 20
                 seconds-scale: 1
