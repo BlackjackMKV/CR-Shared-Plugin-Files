@@ -53,49 +53,42 @@ Weak Flesh:
                 icon-key: ''
                 time: 'Day'
               children:
-                Fire-d:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'False'
-                    damage-base: 2
-                    damage-scale: 0
-                    seconds-base: 1
-                    seconds-scale: 1
-            Armor-e:
-              type: 'condition'
-              data:
-                icon-key: ''
-                armor: 'Helmet'
-                check-mat: 'False'
-                check-data: 'False'
-                check-lore: 'False'
-                check-name: 'False'
-                regex: 'False'
-              children:
-                Flag-f:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'True'
-                    key: 'unburn'
-                    seconds-base: 1
-                    seconds-scale: 1
-                Flag-g:
+                Ceiling-d:
                   type: 'condition'
                   data:
                     icon-key: ''
-                    type: 'Not Set'
-                    key: 'unburn'
+                    distance-base: 100
+                    distance-scale: 0
+                    at-least: 'False'
                   children:
-                    Fire-h:
+                    Fire-e:
+                      type: 'mechanic'
+                      data:
+                        icon-key: ''
+                        counts: 'True'
+                        damage-base: 1
+                        damage-scale: 0
+                        seconds-base: 5
+                        seconds-scale: 1
+                    Armor-f:
                       type: 'condition'
                       data:
                         icon-key: ''
-                        type: 'On Fire'
+                        armor: 'Helmet'
+                        check-mat: 'False'
+                        check-data: 'False'
+                        check-lore: 'False'
+                        check-name: 'False'
+                        regex: 'False'
                       children:
-                        Cancel-i:
-                          type: 'mechanic'
+                        Fire-g:
+                          type: 'condition'
                           data:
                             icon-key: ''
-                            counts: 'False'
+                            type: 'On Fire'
+                          children:
+                            Cancel-h:
+                              type: 'mechanic'
+                              data:
+                                icon-key: ''
+                                counts: 'False'

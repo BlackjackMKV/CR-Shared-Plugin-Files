@@ -60,32 +60,18 @@ Natural Habitat:
                     counts: 'True'
                     potion: 'Fast digging'
                     ambient: 'False'
-                    tier-base: 2
+                    tier-base: 3
                     tier-scale: 0
-                    seconds-base: 1
+                    seconds-base: 5
                     seconds-scale: 1
-        Passive-e:
-          type: 'mechanic'
-          data:
-            icon-key: ''
-            counts: 'False'
-            seconds-base: 1
-            seconds-scale: 0
-          children:
-            Water-f:
-              type: 'condition'
-              data:
-                icon-key: ''
-                state: 'In Water'
-              children:
-                Potion-g:
+                Potion-e:
                   type: 'mechanic'
                   data:
                     icon-key: ''
                     counts: 'True'
-                    potion: 'Speed'
+                    potion: 'Dolphins grace'
                     ambient: 'True'
-                    tier-base: 2
+                    tier-base: 3
                     tier-scale: 0
-                    seconds-base: 1
+                    seconds-base: 5
                     seconds-scale: 1
