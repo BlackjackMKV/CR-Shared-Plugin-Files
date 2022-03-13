@@ -68,7 +68,7 @@ Fins For Feet:
                         counts: 'False'
                         potion: 'Slow'
                         ambient: 'False'
-                        tier-base: 3
+                        tier-base: 2
                         tier-scale: 0
-                        seconds-base: 1
+                        seconds-base: 5
                         seconds-scale: 1

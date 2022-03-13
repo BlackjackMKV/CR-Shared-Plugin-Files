@@ -40,26 +40,41 @@ Base Weakness:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
-        target: 'False'
+        target: 'True'
         type: 'Both'
         dmg-min: 0
         dmg-max: 999
       children:
-        Tool-b:
-          type: 'condition'
+        Passive-b:
+          type: 'mechanic'
           data:
             icon-key: ''
-            material: 'Iron'
-            tool: 'Any'
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
           children:
-            Defense Buff-c:
-              type: 'mechanic'
+            Entity Type-c:
+              type: 'condition'
               data:
                 icon-key: ''
-                counts: 'True'
-                type: 'Multiplier'
-                skill: 'False'
-                value-base: 2
-                value-scale: 0
-                seconds-base: 1
-                seconds-scale: 0
+                types:
+                - 'Player'
+              children:
+                Tool-d:
+                  type: 'condition'
+                  data:
+                    icon-key: ''
+                    material: 'Iron'
+                    tool: 'Any'
+                  children:
+                    Defense Buff-e:
+                      type: 'mechanic'
+                      data:
+                        icon-key: ''
+                        counts: 'True'
+                        type: 'Multiplier'
+                        skill: 'False'
+                        value-base: 2
+                        value-scale: 0
+                        seconds-base: 5
+                        seconds-scale: 0

@@ -56,5 +56,5 @@ Gills:
                 ambient: 'True'
                 tier-base: 1
                 tier-scale: 0
-                seconds-base: 1
+                seconds-base: 5
                 seconds-scale: 1
