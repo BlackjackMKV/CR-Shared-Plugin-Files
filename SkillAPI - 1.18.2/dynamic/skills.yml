@@ -35,35 +35,44 @@ Base Weakness:
     incompatible:
     - ''
   components:
-    Took Physical Damage-a:
+    Initialize-a:
       type: 'trigger'
       data:
         icon-key: ''
-        mana: 'False'
-        cooldown: 'False'
-        target: 'False'
-        type: 'Both'
-        dmg-min: 0
-        dmg-max: 999
       children:
-        Tool-b:
-          type: 'condition'
+        Passive-b:
+          type: 'mechanic'
           data:
             icon-key: ''
-            material: 'Iron'
-            tool: 'Any'
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
           children:
-            Defense Buff-c:
-              type: 'mechanic'
+            Entity Type-c:
+              type: 'condition'
               data:
                 icon-key: ''
-                counts: 'True'
-                type: 'Multiplier'
-                skill: 'False'
-                value-base: 2
-                value-scale: 0
-                seconds-base: 5
-                seconds-scale: 0
+                types:
+                - 'Player'
+              children:
+                Tool-d:
+                  type: 'condition'
+                  data:
+                    icon-key: ''
+                    material: 'Iron'
+                    tool: 'Any'
+                  children:
+                    Defense Buff-e:
+                      type: 'mechanic'
+                      data:
+                        icon-key: ''
+                        counts: 'False'
+                        type: 'Multiplier'
+                        skill: 'False'
+                        value-base: 2
+                        value-scale: 0
+                        seconds-base: 3
+                        seconds-scale: 0
 Fairy Wings:
   name: 'Fairy Wings'
   type: 'Passive'
@@ -111,7 +120,22 @@ Fairy Wings:
             icon-key: ''
             crouch: 'True'
           children:
-            Passive-c:
+            Flag-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'False'
+                key: 'slowfall'
+                seconds-base: 1
+                seconds-scale: 1
+        Flag-d:
+          type: 'condition'
+          data:
+            icon-key: ''
+            type: 'Set'
+            key: 'slowfall'
+          children:
+            Passive-e:
               type: 'mechanic'
               data:
                 icon-key: ''
@@ -119,7 +143,7 @@ Fairy Wings:
                 seconds-base: 1
                 seconds-scale: 0
               children:
-                Potion-d:
+                Potion-f:
                   type: 'mechanic'
                   data:
                     icon-key: ''
@@ -362,19 +386,11 @@ Graceful:
         cooldown: 'False'
         type: 'Fall'
       children:
-        Passive-b:
+        Cancel-b:
           type: 'mechanic'
           data:
             icon-key: ''
             counts: 'False'
-            seconds-base: 1
-            seconds-scale: 0
-          children:
-            Cancel-c:
-              type: 'mechanic'
-              data:
-                icon-key: ''
-                counts: 'False'
 Hunger Stomach:
   name: 'Hunger Stomach'
   type: 'Passive'
@@ -442,6 +458,17 @@ Hunger Stomach:
                     counts: 'False'
                     potion: 'Hunger'
                     status: ''
+                Potion-e:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Saturation'
+                    ambient: 'True'
+                    tier-base: 3
+                    tier-scale: 0
+                    seconds-base: 2
+                    seconds-scale: 1
 Infectious:
   name: 'Infectious'
   type: 'Passive'
@@ -498,7 +525,7 @@ Infectious:
               data:
                 icon-key: ''
                 counts: 'False'
-                command: '/spawnmob zombie 1'
+                command: 'spawnmob zombie 1'
                 type: 'OP'
 Iron Heart:
   name: 'Iron Heart'
@@ -670,6 +697,75 @@ Iron Skin:
                 value-scale: 0
                 seconds-base: 1
                 seconds-scale: 0
+            Potion-d:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'False'
+                potion: 'Slow'
+                ambient: 'True'
+                tier-base: 2
+                tier-scale: 0
+                seconds-base: 5
+                seconds-scale: 1
+Iron Stomach:
+  name: 'Iron Stomach'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Food-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                food-base: 20
+                food-scale: 1
+                saturation-base: 0
+                saturation-scale: 0
 Natural Habitat:
   name: 'Natural Habitat'
   type: 'Passive'
@@ -991,16 +1087,10 @@ Righteous:
     incompatible:
     - ''
   components:
-    Physical Damage-a:
+    Initialize-a:
       type: 'trigger'
       data:
         icon-key: ''
-        mana: 'False'
-        cooldown: 'False'
-        target: 'True'
-        type: 'Both'
-        dmg-min: 0
-        dmg-max: 999
       children:
         Passive-b:
           type: 'mechanic'
@@ -1010,20 +1100,45 @@ Righteous:
             seconds-base: 1
             seconds-scale: 0
           children:
-            Entity Type-c:
+            Area-c:
+              type: 'target'
+              data:
+                icon-key: ''
+                radius-base: 10
+                radius-scale: 0
+                group: 'Enemy'
+                wall: 'False'
+                caster: 'False'
+                max-base: 99
+                max-scale: 0
+                random: 'False'
+              children:
+                Entity Type-d:
+                  type: 'condition'
+                  data:
+                    icon-key: ''
+                    types:
+                    - 'Skeleton'
+                    - 'Skeleton horse'
+                    - 'Zoglin'
+                    - 'Zombie horse'
+                    - 'Zombie villager'
+                    - 'Zombified piglin'
+                  children:
+                    Flag-e:
+                      type: 'condition'
+                      data:
+                        icon-key: ''
+                        type: 'Set'
+                        key: 'undead'
+            Flag-f:
               type: 'condition'
               data:
                 icon-key: ''
-                types:
-                - 'Skeleton'
-                - 'Skeleton horse'
-                - 'Zoglin'
-                - 'Zombie'
-                - 'Zombie horse'
-                - 'Zombie villager'
-                - 'Zombified piglin'
+                type: 'Set'
+                key: 'undead'
               children:
-                Damage Buff-d:
+                Damage Buff-g:
                   type: 'mechanic'
                   data:
                     icon-key: ''
@@ -1149,26 +1264,18 @@ Tiny Body:
         dmg-min: 0
         dmg-max: 999
       children:
-        Passive-b:
-          type: 'mechanic'
+        Chance-b:
+          type: 'condition'
           data:
             icon-key: ''
-            counts: 'True'
-            seconds-base: 1
-            seconds-scale: 0
+            chance-base: 25
+            chance-scale: 0
           children:
-            Chance-c:
-              type: 'condition'
+            Cancel-c:
+              type: 'mechanic'
               data:
                 icon-key: ''
-                chance-base: 10
-                chance-scale: 0
-              children:
-                Cancel-d:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'False'
+                counts: 'False'
 Weak Flesh:
   name: 'Weak Flesh'
   type: 'Dynamic'
