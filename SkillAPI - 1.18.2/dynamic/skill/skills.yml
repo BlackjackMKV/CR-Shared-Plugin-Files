@@ -1126,18 +1126,26 @@ Tiny Body:
         dmg-min: 0
         dmg-max: 999
       children:
-        Chance-b:
-          type: 'condition'
+        Passive-b:
+          type: 'mechanic'
           data:
             icon-key: ''
-            chance-base: 25
-            chance-scale: 0
+            counts: 'True'
+            seconds-base: 1
+            seconds-scale: 0
           children:
-            Cancel-c:
-              type: 'mechanic'
+            Chance-c:
+              type: 'condition'
               data:
                 icon-key: ''
-                counts: 'False'
+                chance-base: 10
+                chance-scale: 0
+              children:
+                Cancel-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'False'
 Weak Flesh:
   name: 'Weak Flesh'
   type: 'Passive'
