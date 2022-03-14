@@ -70,3 +70,19 @@ Weak Flesh:
                         damage-scale: 0
                         seconds-base: 3
                         seconds-scale: 1
+            Armor-f:
+              type: 'condition'
+              data:
+                icon-key: ''
+                armor: 'Helmet'
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'False'
+                check-name: 'False'
+                regex: 'False'
+              children:
+                Cancel-g:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'False'

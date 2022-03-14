@@ -49,7 +49,7 @@ Fairy Wings:
               type: 'mechanic'
               data:
                 icon-key: ''
-                counts: 'False'
+                counts: 'True'
                 potion: 'Slow falling'
                 ambient: 'True'
                 tier-base: 1

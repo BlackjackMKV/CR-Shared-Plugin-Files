@@ -40,7 +40,7 @@ Righteous:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
-        target: 'True'
+        target: 'False'
         type: 'Both'
         dmg-min: 0
         dmg-max: 999

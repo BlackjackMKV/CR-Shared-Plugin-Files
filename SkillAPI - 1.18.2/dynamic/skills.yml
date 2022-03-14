@@ -130,7 +130,7 @@ Fairy Wings:
               type: 'mechanic'
               data:
                 icon-key: ''
-                counts: 'False'
+                counts: 'True'
                 potion: 'Slow falling'
                 ambient: 'True'
                 tier-base: 1
@@ -974,7 +974,7 @@ Righteous:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
-        target: 'True'
+        target: 'False'
         type: 'Both'
         dmg-min: 0
         dmg-max: 999
@@ -1210,3 +1210,19 @@ Weak Flesh:
                         damage-scale: 0
                         seconds-base: 3
                         seconds-scale: 1
+            Armor-f:
+              type: 'condition'
+              data:
+                icon-key: ''
+                armor: 'Helmet'
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'False'
+                check-name: 'False'
+                regex: 'False'
+              children:
+                Cancel-g:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'False'
