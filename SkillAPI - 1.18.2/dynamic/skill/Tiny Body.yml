@@ -45,23 +45,15 @@ Tiny Body:
         dmg-min: 0
         dmg-max: 999
       children:
-        Passive-b:
-          type: 'mechanic'
+        Chance-b:
+          type: 'condition'
           data:
             icon-key: ''
-            counts: 'True'
-            seconds-base: 1
-            seconds-scale: 0
+            chance-base: 25
+            chance-scale: 0
           children:
-            Chance-c:
-              type: 'condition'
+            Cancel-c:
+              type: 'mechanic'
               data:
                 icon-key: ''
-                chance-base: 10
-                chance-scale: 0
-              children:
-                Cancel-d:
-                  type: 'mechanic'
-                  data:
-                    icon-key: ''
-                    counts: 'False'
+                counts: 'False'
