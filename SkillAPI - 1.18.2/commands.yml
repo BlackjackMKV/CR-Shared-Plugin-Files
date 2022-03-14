@@ -260,3 +260,43 @@ acc:
   messages: 
     not-account: '&cThat is not a valid account ID'
     account-changed: '&2Your account has been changed'
+refund: 
+  name: 'refund'
+  description: 'Refound Skill/Attributes points'
+  permission: 'skillapi.refund'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
+help: 
+  name: 'help'
+  description: 'Get help for the plugin'
+  permission: 'skillapi.basic'
+  args: '<page>'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+mobcast: 
+  name: 'mobcast'
+  description: 'Mob casts the skill'
+  permission: 'skillapi.force'
+  args: '<mob_uuid> <skill> [level]'
+  sender: 'CONSOLE_ONLY'
+  enabled: 'true'
+  cooldown: 0
+ap: 
+  name: 'ap'
+  description: 'Gives attrib points'
+  permission: 'skillapi.attrib'
+  args: '[player] <amount>'
+  sender: 'ANYONE'
+  enabled: 'true'
+  cooldown: 0
+attr: 
+  name: 'attr'
+  description: 'Opens attribute menu'
+  permission: 'skillapi.basic'
+  args: ''
+  sender: 'PLAYER_ONLY'
+  enabled: 'true'
+  cooldown: 0
