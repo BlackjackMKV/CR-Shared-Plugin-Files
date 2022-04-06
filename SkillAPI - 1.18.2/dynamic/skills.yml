@@ -1,29 +1,18 @@
-loaded: 'true'
-Base Weakness: 
+loaded: false
+Base Weakness:
   name: 'Base Weakness'
   type: 'Passive'
   max-level: 1
+  skill-req: 'None'
   skill-req-lvl: 1
   needs-permission: 'false'
   cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
   msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
   icon: 'IRON_SWORD'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -32,88 +21,76 @@ Base Weakness:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Took Physical Damage-a: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Took Physical Damage-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
-        target: 'True'
+        target: 'False'
         type: 'Both'
-        dmg-min: '0'
-        dmg-max: '999'
-        indicator: '2D'
-      children: 
-        Passive-b: 
+        dmg-min: 0
+        dmg-max: 999
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Entity Type-c: 
+            seconds-base: 0.01
+            seconds-scale: 0
+          children:
+            Tool-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
-                types: 
-                - 'Player'
-                indicator: '2D'
-              children: 
-                Tool-d: 
-                  type: 'condition'
-                  indicator: '3D'
-                  data: 
+                material: 'Iron'
+                tool: 'Any'
+              children:
+                Self-d:
+                  type: 'target'
+                  data:
                     icon-key: ''
-                    material: 'Iron'
-                    tool: 'Any'
-                    indicator: '2D'
-                  children: 
-                    Defense Buff-e: 
+                  children:
+                    Defense Buff-e:
                       type: 'mechanic'
-                      indicator: '3D'
-                      data: 
+                      data:
                         icon-key: ''
                         counts: 'True'
                         type: 'Multiplier'
                         skill: 'False'
-                        value-base: '2'
-                        value-scale: '0'
-                        seconds-base: '5'
-                        seconds-scale: '0'
-                        indicator: '2D'
-                      children:  {}
-Fairy Wings: 
+                        value-base: 2
+                        value-scale: 0
+                        seconds-base: 1
+                        seconds-scale: 0
+Fairy Wings:
   name: 'Fairy Wings'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
   needs-permission: 'false'
   cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
   msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
   icon: 'ELYTRA'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -122,62 +99,67 @@ Fairy Wings:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Crouch-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Crouch-b: 
-          type: 'condition'
-          indicator: '3D'
-          data: 
+        mana: 'False'
+        cooldown: 'False'
+        type: 'Start Crouching'
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
             icon-key: ''
-            crouch: 'True'
-            indicator: '2D'
-          children: 
-            Potion-c: 
-              type: 'mechanic'
-              indicator: '3D'
-              data: 
+            counts: 'True'
+            seconds-base: 0.1
+            seconds-scale: 0
+          children:
+            Crouch-c:
+              type: 'condition'
+              data:
                 icon-key: ''
-                counts: 'True'
-                potion: 'Slow falling'
-                ambient: 'True'
-                tier-base: '1'
-                tier-scale: '0'
-                seconds-base: '5'
-                seconds-scale: '1'
-                indicator: '2D'
-              children:  {}
-Fins For Feet: 
+                crouch: 'True'
+              children:
+                Potion-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Slow falling'
+                    ambient: 'True'
+                    tier-base: 1
+                    tier-scale: 0
+                    seconds-base: 0.5
+                    seconds-scale: 0
+Fins For Feet:
   name: 'Fins For Feet'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'JACK_O_LANTERN'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -186,82 +168,72 @@ Fins For Feet:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Water-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Water-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 state: 'Out Of Water'
-                indicator: '2D'
-              children: 
-                Delay-d: 
+              children:
+                Delay-d:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'False'
-                    delay-base: '5'
-                    delay-scale: '0'
-                    indicator: '2D'
-                  children: 
-                    Potion-e: 
+                    delay-base: 5
+                    delay-scale: 0
+                  children:
+                    Potion-e:
                       type: 'mechanic'
-                      indicator: '3D'
-                      data: 
+                      data:
                         icon-key: ''
                         counts: 'False'
                         potion: 'Slow'
                         ambient: 'False'
-                        tier-base: '2'
-                        tier-scale: '0'
-                        seconds-base: '5'
-                        seconds-scale: '1'
-                        indicator: '2D'
-                      children:  {}
-Friendly Undead: 
+                        tier-base: 2
+                        tier-scale: 0
+                        seconds-base: 5
+                        seconds-scale: 1
+Friendly Undead:
   name: 'Friendly Undead'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'ZOMBIE_HEAD'
+  combo: ''
+  indicator: '2D'
+  icon: 'Zombie head'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -270,58 +242,52 @@ Friendly Undead:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Entity Type-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Entity Type-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
-                types:  {}
-                indicator: '2D'
-              children:  {}
-Gills: 
+                types:
+Gills:
   name: 'Gills'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'IRON_BARS'
+  combo: ''
+  indicator: '2D'
+  icon: 'Iron bars'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -330,72 +296,64 @@ Gills:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Water-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Water-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 state: 'In Water'
-                indicator: '2D'
-              children: 
-                Potion-d: 
+              children:
+                Potion-d:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'True'
                     potion: 'Water breathing'
                     ambient: 'True'
-                    tier-base: '1'
-                    tier-scale: '0'
-                    seconds-base: '5'
-                    seconds-scale: '1'
-                    indicator: '2D'
-                  children:  {}
-Graceful: 
+                    tier-base: 1
+                    tier-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 1
+Graceful:
   name: 'Graceful'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'JACK_O_LANTERN'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -404,61 +362,55 @@ Graceful:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Environment Damage-a: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Environment Damage-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
         type: 'Fall'
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Cancel-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Cancel-c:
               type: 'mechanic'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 counts: 'False'
-                indicator: '2D'
-              children:  {}
-Hunger Stomach: 
+Hunger Stomach:
   name: 'Hunger Stomach'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'ROTTEN_FLESH'
+  combo: ''
+  indicator: '2D'
+  icon: 'Rotten flesh'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -467,71 +419,65 @@ Hunger Stomach:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Potion-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Potion-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 type: 'Active'
                 potion: 'Hunger'
-                min-rank-base: '0'
-                min-rank-scale: '0'
-                max-rank-base: '999'
-                max-rank-scale: '0'
-                indicator: '2D'
-              children: 
-                Cancel-d: 
+                min-rank-base: 0
+                min-rank-scale: 0
+                max-rank-base: 999
+                max-rank-scale: 0
+              children:
+                Cleanse-d:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'False'
-                    indicator: '2D'
-                  children:  {}
-Infectious: 
+                    potion: 'Hunger'
+                    status: ''
+Infectious:
   name: 'Infectious'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'MOSSY_COBBLESTONE'
+  combo: ''
+  indicator: '2D'
+  icon: 'Mossy cobblestone'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -540,62 +486,56 @@ Infectious:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Kill-a: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Kill-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
-        indicator: '2D'
-      children: 
-        Entity Type-b: 
+      children:
+        Entity Type-b:
           type: 'condition'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
-            types: 
+            types:
             - 'Villager'
             - 'Player'
-            indicator: '2D'
-          children: 
-            Command-c: 
+          children:
+            Command-c:
               type: 'mechanic'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 counts: 'False'
                 command: '/spawn zombie'
                 type: 'OP'
-                indicator: '2D'
-              children:  {}
-Iron Heart: 
-  name: 'Iron Heart'
+Iron Skin:
+  name: 'Iron Skin'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'GOLDEN_APPLE'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -604,22 +544,91 @@ Iron Heart:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Right Click-a: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Defense Buff-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'False'
+                type: 'Multiplier'
+                skill: 'False'
+                value-base: 0.6
+                value-scale: 0
+                seconds-base: 1
+                seconds-scale: 0
+Iron Stomach:
+  name: 'Iron Stomach'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Golden apple'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Right Click-a:
+      type: 'trigger'
+      data:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
         crouch: 'Both'
-        indicator: '2D'
-      children: 
-        Item-b: 
+      children:
+        Item-b:
           type: 'condition'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             check-mat: 'True'
             material: 'Iron ingot'
@@ -627,102 +636,62 @@ Iron Heart:
             check-lore: 'False'
             check-name: 'False'
             regex: 'False'
-            indicator: '2D'
-          children: 
-            Food-c: 
+          children:
+            Sound-c:
               type: 'mechanic'
-              indicator: '3D'
-              data: 
-                icon-key: ''
-                counts: 'False'
-                food-base: '5'
-                food-scale: '1'
-                saturation-base: '5'
-                saturation-scale: '0'
-                indicator: '2D'
-              children:  {}
-            Sound-d: 
-              type: 'mechanic'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 counts: 'True'
                 sound: 'Block anvil place'
-                volume-base: '25'
-                volume-scale: '0'
-                pitch-base: '1'
-                pitch-scale: '0'
-                indicator: '2D'
-              children:  {}
-            Sound-e: 
+                volume-base: 25
+                volume-scale: 0
+                pitch-base: 1
+                pitch-scale: 0
+            Sound-d:
               type: 'mechanic'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 counts: 'True'
                 sound: 'Block anvil place'
-                volume-base: '25'
-                volume-scale: '0'
-                pitch-base: '1'
-                pitch-scale: '0'
-                indicator: '2D'
-              children:  {}
-            Inventory-f: 
-              type: 'condition'
-              indicator: '3D'
-              data: 
+                volume-base: 25
+                volume-scale: 0
+                pitch-base: 1
+                pitch-scale: 0
+            Heal-e:
+              type: 'mechanic'
+              data:
                 icon-key: ''
-                amount-base: '1'
-                amount-scale: '0'
+                counts: 'True'
+                type: 'Health'
+                value-base: 5
+                value-scale: 1
+            Item Remove-f:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                amount-base: 1
+                amount-scale: 0
                 check-mat: 'True'
                 material: 'Iron ingot'
                 check-data: 'False'
                 check-lore: 'False'
                 check-name: 'False'
                 regex: 'False'
-                indicator: '2D'
-              children: 
-                Item Remove-g: 
-                  type: 'mechanic'
-                  indicator: '3D'
-                  data: 
-                    icon-key: ''
-                    counts: 'False'
-                    amount-base: '1'
-                    amount-scale: '0'
-                    check-mat: 'True'
-                    material: 'Iron ingot'
-                    check-data: 'False'
-                    check-lore: 'False'
-                    check-name: 'False'
-                    regex: 'False'
-                    indicator: '2D'
-                  children:  {}
-Iron Skin: 
-  name: 'Iron Skin'
+Mecha Munchies:
+  name: 'Mecha Munchies'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'JACK_O_LANTERN'
+  combo: ''
+  indicator: '2D'
+  icon: 'Iron ore'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -731,64 +700,65 @@ Iron Skin:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
-            counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Defense Buff-c: 
+            counts: 'True'
+            seconds-base: 0.5
+            seconds-scale: 0
+          children:
+            Food-c:
               type: 'mechanic'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
-                counts: 'False'
-                type: 'Multiplier'
-                skill: 'False'
-                value-base: '0.60'
-                value-scale: '0'
-                seconds-base: '1'
-                seconds-scale: '0'
-                indicator: '2D'
-              children:  {}
-Natural Habitat: 
+                counts: 'True'
+                food-base: -20
+                food-scale: 0
+                saturation-base: 0
+                saturation-scale: 0
+            Food-d:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                food-base: 10
+                food-scale: 0
+                saturation-base: 0
+                saturation-scale: 0
+Natural Habitat:
   name: 'Natural Habitat'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'JACK_O_LANTERN'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -797,86 +767,75 @@ Natural Habitat:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Water-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Water-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 state: 'In Water'
-                indicator: '2D'
-              children: 
-                Potion-d: 
+              children:
+                Potion-d:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'True'
                     potion: 'Fast digging'
                     ambient: 'False'
-                    tier-base: '3'
-                    tier-scale: '0'
-                    seconds-base: '5'
-                    seconds-scale: '1'
-                    indicator: '2D'
-                  children:  {}
-                Potion-e: 
+                    tier-base: 3
+                    tier-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 1
+                Potion-e:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'False'
                     potion: 'Dolphins grace'
                     ambient: 'True'
-                    tier-base: '3'
-                    tier-scale: '0'
-                    seconds-base: '5'
-                    seconds-scale: '1'
-                    indicator: '2D'
-                  children:  {}
-Natural Talent: 
+                    tier-base: 3
+                    tier-scale: 0
+                    seconds-base: 5
+                    seconds-scale: 1
+Natural Talent:
   name: 'Natural Talent'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'TRIDENT'
+  combo: ''
+  indicator: '2D'
+  icon: 'Trident'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -885,29 +844,36 @@ Natural Talent:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Item-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Item-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 check-mat: 'True'
                 material: 'Trident'
@@ -915,48 +881,33 @@ Natural Talent:
                 check-lore: 'False'
                 check-name: 'False'
                 regex: 'False'
-                indicator: '2D'
-              children: 
-                Attribute-d: 
+              children:
+                Attribute-d:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'False'
                     key: 'Strength'
                     operation: 'ADD_NUMBER'
-                    amount-base: '5'
-                    amount-scale: '2'
-                    seconds-base: '1'
-                    seconds-scale: '0'
+                    amount-base: 5
+                    amount-scale: 2
+                    seconds-base: 1
+                    seconds-scale: 0
                     stackable: 'True'
-                    indicator: '2D'
-                  children:  {}
-Revivable: 
+Revivable:
   name: 'Revivable'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'ZOMBIE_SPAWN_EGG'
+  combo: ''
+  indicator: '2D'
+  icon: 'Zombie spawn egg'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -965,116 +916,98 @@ Revivable:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Health-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Health-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 type: 'Health'
-                min-value-base: '1'
-                min-value-scale: '0'
-                max-value-base: '4'
-                max-value-scale: '2'
-                indicator: '2D'
-              children: 
-                Heal-d: 
+                min-value-base: 1
+                min-value-scale: 0
+                max-value-base: 4
+                max-value-scale: 2
+              children:
+                Heal-d:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'False'
                     type: 'Health'
-                    value-base: '20'
-                    value-scale: '1'
-                    indicator: '2D'
-                  children:  {}
-                Flag-e: 
+                    value-base: 20
+                    value-scale: 1
+                Flag-e:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'True'
                     key: 'notrevive'
-                    seconds-base: '600'
-                    seconds-scale: '1'
-                    indicator: '2D'
-                  children:  {}
-            Flag-f: 
+                    seconds-base: 600
+                    seconds-scale: 1
+            Flag-f:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 type: 'Set'
                 key: 'notrevive'
-                indicator: '2D'
-              children: 
-                Health-g: 
+              children:
+                Health-g:
                   type: 'condition'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     type: 'Health'
-                    min-value-base: '1'
-                    min-value-scale: '0'
-                    max-value-base: '4'
-                    max-value-scale: '2'
-                    indicator: '2D'
-                  children: 
-                    Heal-h: 
+                    min-value-base: 1
+                    min-value-scale: 0
+                    max-value-base: 4
+                    max-value-scale: 2
+                  children:
+                    Heal-h:
                       type: 'mechanic'
-                      indicator: '3D'
-                      data: 
+                      data:
                         icon-key: ''
                         counts: 'False'
                         type: 'Health'
-                        value-base: '-3'
-                        value-scale: '1'
-                        indicator: '2D'
-                      children:  {}
-Righteous: 
+                        value-base: -3
+                        value-scale: 1
+Righteous:
   name: 'Righteous'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'MYCELIUM'
+  combo: ''
+  indicator: '2D'
+  icon: 'Mycelium'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -1083,37 +1016,44 @@ Righteous:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Physical Damage-a: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Physical Damage-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
         target: 'False'
         type: 'Both'
-        dmg-min: '0'
-        dmg-max: '999'
-        indicator: '2D'
-      children: 
-        Passive-b: 
+        dmg-min: 0
+        dmg-max: 999
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'False'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Entity Type-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Entity Type-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
-                types: 
+                types:
                 - 'Skeleton'
                 - 'Skeleton horse'
                 - 'Zoglin'
@@ -1121,47 +1061,32 @@ Righteous:
                 - 'Zombie horse'
                 - 'Zombie villager'
                 - 'Zombified piglin'
-                indicator: '2D'
-              children: 
-                Damage Buff-d: 
+              children:
+                Damage Buff-d:
                   type: 'mechanic'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
                     counts: 'True'
                     type: 'Flat'
                     skill: 'False'
-                    value-base: '5'
-                    value-scale: '0'
-                    seconds-base: '1'
-                    seconds-scale: '0'
-                    indicator: '2D'
-                  children:  {}
-Savior: 
+                    value-base: 5
+                    value-scale: 0
+                    seconds-base: 1
+                    seconds-scale: 0
+Savior:
   name: 'Savior'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '25'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'LECTERN'
+  combo: ''
+  indicator: '2D'
+  icon: 'Lectern'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -1170,72 +1095,66 @@ Savior:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Took Physical Damage-a: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 25
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Took Physical Damage-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
         mana: 'False'
         cooldown: 'True'
         target: 'True'
         type: 'Both'
-        dmg-min: '0'
-        dmg-max: '999'
-        indicator: '2D'
-      children: 
-        Health-b: 
+        dmg-min: 0
+        dmg-max: 999
+      children:
+        Health-b:
           type: 'condition'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             type: 'Health'
-            min-value-base: '1'
-            min-value-scale: '0'
-            max-value-base: '5'
-            max-value-scale: '0'
-            indicator: '2D'
-          children: 
-            Potion-c: 
+            min-value-base: 1
+            min-value-scale: 0
+            max-value-base: 5
+            max-value-scale: 0
+          children:
+            Potion-c:
               type: 'mechanic'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 counts: 'False'
                 potion: 'Absorption'
                 ambient: 'True'
-                tier-base: '2'
-                tier-scale: '0'
-                seconds-base: '20'
-                seconds-scale: '1'
-                indicator: '2D'
-              children:  {}
-Tiny Body: 
+                tier-base: 2
+                tier-scale: 0
+                seconds-base: 20
+                seconds-scale: 1
+Tiny Body:
   name: 'Tiny Body'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'STICK'
+  combo: ''
+  indicator: '2D'
+  icon: 'Stick'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -1244,63 +1163,57 @@ Tiny Body:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Took Physical Damage-a: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Took Physical Damage-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
         mana: 'False'
         cooldown: 'False'
         target: 'True'
         type: 'Both'
-        dmg-min: '0'
-        dmg-max: '999'
-        indicator: '2D'
-      children: 
-        Chance-b: 
+        dmg-min: 0
+        dmg-max: 999
+      children:
+        Chance-b:
           type: 'condition'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
-            chance-base: '25'
-            chance-scale: '0'
-            indicator: '2D'
-          children: 
-            Cancel-c: 
+            chance-base: 25
+            chance-scale: 0
+          children:
+            Cancel-c:
               type: 'mechanic'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 counts: 'False'
-                indicator: '2D'
-              children:  {}
-Weak Flesh: 
+Weak Flesh:
   name: 'Weak Flesh'
   type: 'Passive'
   max-level: 1
+  skill-req: ''
   skill-req-lvl: 1
-  needs-permission: 'false'
-  cooldown-message: 'true'
-  attributes: 
-    level-base: '1'
-    level-scale: '0'
-    cost-base: '0'
-    cost-scale: '0'
-    cooldown-base: '0'
-    cooldown-scale: '0'
-    mana-base: '0'
-    mana-scale: '0'
-    points-spent-req-base: '0'
-    points-spent-req-scale: '0'
-    incompatible: 
-    - ''
+  needs-permission: 'False'
+  cooldown-message: 'True'
   msg: '&6{player} &2has cast &6{skill}'
-  icon: 'JACK_O_LANTERN'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
   icon-data: 0
-  icon-durability: 0
-  icon-lore: 
+  icon-lore:
   - '&d{name} &7({level}/{max})'
   - '&2Type: &6{type}'
   - ''
@@ -1309,46 +1222,69 @@ Weak Flesh:
   - ''
   - '&2Mana: {attr:mana}'
   - '&2Cooldown: {attr:cooldown}'
-  desc:  []
-  components: 
-    Initialize: 
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
       type: 'trigger'
-      indicator: '3D'
-      data: 
+      data:
         icon-key: ''
-        indicator: '2D'
-      children: 
-        Passive-b: 
+      children:
+        Passive-b:
           type: 'mechanic'
-          indicator: '3D'
-          data: 
+          data:
             icon-key: ''
             counts: 'True'
-            seconds-base: '1'
-            seconds-scale: '0'
-            indicator: '2D'
-          children: 
-            Time-c: 
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Time-c:
               type: 'condition'
-              indicator: '3D'
-              data: 
+              data:
                 icon-key: ''
                 time: 'Day'
-                indicator: '2D'
-              children: 
-                Ceiling-d: 
+              children:
+                Ceiling-d:
                   type: 'condition'
-                  indicator: '3D'
-                  data: 
+                  data:
                     icon-key: ''
-                    distance-base: '100'
-                    distance-scale: '0'
+                    distance-base: 100
+                    distance-scale: 0
                     at-least: 'True'
-                    indicator: '2D'
-                  children: 
-                    Fire-e: 
+                  children:
+                    Fire-e:
                       type: 'mechanic'
-                      indicator: '3D'
-                      data: 
+                      data:
                         icon-key: ''
                         counts: 'False'
+                        damage-base: 1
+                        damage-scale: 0
+                        seconds-base: 3
+                        seconds-scale: 1
+            Armor-f:
+              type: 'condition'
+              data:
+                icon-key: ''
+                armor: 'Helmet'
+                check-mat: 'False'
+                check-data: 'False'
+                check-lore: 'False'
+                check-name: 'False'
+                regex: 'False'
+              children:
+                Cancel-g:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'False'
