@@ -77,6 +77,126 @@ Base Weakness:
                         value-scale: 0
                         seconds-base: 1
                         seconds-scale: 0
+Bouncy:
+  name: 'Bouncy'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'False'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Potion-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                potion: 'Jump'
+                ambient: 'False'
+                tier-base: 2
+                tier-scale: 0
+                seconds-base: 3
+                seconds-scale: 1
+Brimstone:
+  name: 'Brimstone'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'True'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Potion-c:
+              type: 'mechanic'
+              data:
+                icon-key: ''
+                counts: 'True'
+                potion: 'Fire resistance'
+                ambient: 'False'
+                tier-base: 1
+                tier-scale: 0
+                seconds-base: 3
+                seconds-scale: 1
 Fae Beauty:
   name: 'Fae Beauty'
   type: 'Passive'
@@ -294,14 +414,14 @@ Friendly Undead:
   name: 'Friendly Undead'
   type: 'Passive'
   max-level: 1
-  skill-req: ''
+  skill-req: 'None'
   skill-req-lvl: 1
-  needs-permission: 'False'
-  cooldown-message: 'True'
+  needs-permission: 'false'
+  cooldown-message: 'true'
   msg: '&6{player} &2has cast &6{skill}'
   combo: ''
   indicator: '2D'
-  icon: 'Zombie head'
+  icon: 'ZOMBIE_HEAD'
   icon-data: 0
   icon-lore:
   - '&d{name} &7({level}/{max})'
@@ -326,24 +446,35 @@ Friendly Undead:
     incompatible:
     - ''
   components:
-    Initialize-a:
+    Took Physical Damage-a:
       type: 'trigger'
       data:
         icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'False'
+        type: 'Both'
+        dmg-min: 0
+        dmg-max: 999
       children:
-        Passive-b:
-          type: 'mechanic'
+        Entity Type-b:
+          type: 'condition'
           data:
             icon-key: ''
-            counts: 'False'
-            seconds-base: 1
-            seconds-scale: 0
+            types:
+            - 'Zombie'
+            - 'Zombie horse'
+            - 'Zombified piglin'
+            - 'Zombie villager'
+            - 'Zoglin'
+            - 'Drowned'
+            - 'Husk'
           children:
-            Entity Type-c:
-              type: 'condition'
+            Cancel-c:
+              type: 'mechanic'
               data:
                 icon-key: ''
-                types:
+                counts: 'True'
 Gills:
   name: 'Gills'
   type: 'Passive'
@@ -467,8 +598,8 @@ Graceful:
               data:
                 icon-key: ''
                 counts: 'False'
-Hunger Stomach:
-  name: 'Hunger Stomach'
+Hellspawn:
+  name: 'Hellspawn'
   type: 'Passive'
   max-level: 1
   skill-req: ''
@@ -478,7 +609,75 @@ Hunger Stomach:
   msg: '&6{player} &2has cast &6{skill}'
   combo: ''
   indicator: '2D'
-  icon: 'Rotten flesh'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'True'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            World-c:
+              type: 'condition'
+              data:
+                icon-key: ''
+                blacklist: 'False'
+                worlds:
+                - 'world_nether'
+              children:
+                Damage Buff-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    type: 'Multiplier'
+                    skill: 'False'
+                    value-base: 1.5
+                    value-scale: 0
+                    seconds-base: 2
+                    seconds-scale: 0
+Hunger Stomach:
+  name: 'Hunger Stomach'
+  type: 'Passive'
+  max-level: 1
+  skill-req: 'None'
+  skill-req-lvl: 1
+  needs-permission: 'false'
+  cooldown-message: 'true'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'ROTTEN_FLESH'
   icon-data: 0
   icon-lore:
   - '&d{name} &7({level}/{max})'
@@ -531,9 +730,65 @@ Hunger Stomach:
                   type: 'mechanic'
                   data:
                     icon-key: ''
-                    counts: 'False'
+                    counts: 'True'
                     potion: 'Hunger'
-                    status: ''
+                    status: 'All'
+Ignition:
+  name: 'Ignition'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Physical Damage-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'False'
+        type: 'Both'
+        dmg-min: 0
+        dmg-max: 999
+      children:
+        Fire-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'True'
+            damage-base: 1
+            damage-scale: 0
+            seconds-base: 5
+            seconds-scale: 0
 Infectious:
   name: 'Infectious'
   type: 'Passive'
@@ -590,7 +845,7 @@ Infectious:
               data:
                 icon-key: ''
                 counts: 'False'
-                command: '/spawn zombie'
+                command: 'spawnentity zombie'
                 type: 'OP'
 Iron Skin:
   name: 'Iron Skin'
@@ -964,6 +1219,65 @@ Natural Talent:
                     seconds-base: 1
                     seconds-scale: 0
                     stackable: 'True'
+Predator:
+  name: 'Predator'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Physical Damage-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+        mana: 'False'
+        cooldown: 'False'
+        target: 'False'
+        type: 'Both'
+        dmg-min: 0
+        dmg-max: 999
+      children:
+        Launch-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'True'
+            relative: 'Caster'
+            forward-base: 0
+            forward-scale: 0
+            upward-base: 3
+            upward-scale: 0
+            right-base: 0
+            right-scale: 0
 Revivable:
   name: 'Revivable'
   type: 'Passive'
@@ -1043,7 +1357,7 @@ Revivable:
                         icon-key: ''
                         counts: 'True'
                         key: 'NotRevivable'
-                        seconds-base: 600
+                        seconds-base: 120
                         seconds-scale: 0
                     Particle-g:
                       type: 'mechanic'
@@ -1064,7 +1378,7 @@ Revivable:
                         amount: 1
                         speed: 0.1
                         forward: 0
-                        upward: 0
+                        upward: 1
                         right: 0
 Righteous:
   name: 'Righteous'
@@ -1213,6 +1527,94 @@ Savior:
                 tier-scale: 0
                 seconds-base: 20
                 seconds-scale: 1
+Soluble:
+  name: 'Soluble'
+  type: 'Passive'
+  max-level: 1
+  skill-req: ''
+  skill-req-lvl: 1
+  needs-permission: 'False'
+  cooldown-message: 'True'
+  msg: '&6{player} &2has cast &6{skill}'
+  combo: ''
+  indicator: '2D'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&d{name} &7({level}/{max})'
+  - '&2Type: &6{type}'
+  - ''
+  - '{req:level}Level: {attr:level}'
+  - '{req:cost}Cost: {attr:cost}'
+  - ''
+  - '&2Mana: {attr:mana}'
+  - '&2Cooldown: {attr:cooldown}'
+  attributes:
+    level-base: 1
+    level-scale: 0
+    cost-base: 0
+    cost-scale: 0
+    cooldown-base: 0
+    cooldown-scale: 0
+    mana-base: 0
+    mana-scale: 0
+    points-spent-req-base: 0
+    points-spent-req-scale: 0
+    incompatible:
+    - ''
+  components:
+    Initialize-a:
+      type: 'trigger'
+      data:
+        icon-key: ''
+      children:
+        Passive-b:
+          type: 'mechanic'
+          data:
+            icon-key: ''
+            counts: 'True'
+            seconds-base: 1
+            seconds-scale: 0
+          children:
+            Water-c:
+              type: 'condition'
+              data:
+                icon-key: ''
+                state: 'In Water'
+              children:
+                Potion-d:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Regeneration'
+                    ambient: 'True'
+                    tier-base: 2
+                    tier-scale: 0
+                    seconds-base: 3
+                    seconds-scale: 1
+                Potion-e:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Blindness'
+                    ambient: 'True'
+                    tier-base: 1
+                    tier-scale: 0
+                    seconds-base: 3
+                    seconds-scale: 1
+                Potion-f:
+                  type: 'mechanic'
+                  data:
+                    icon-key: ''
+                    counts: 'True'
+                    potion: 'Weakness'
+                    ambient: 'True'
+                    tier-base: 2
+                    tier-scale: 0
+                    seconds-base: 3
+                    seconds-scale: 1
 Tiny Body:
   name: 'Tiny Body'
   type: 'Passive'
