@@ -88,6 +88,7 @@ Fae:
   - 'Fairy Wings'
   - 'Tiny Body'
   - 'Base Weakness'
+  - 'Fae Beauty'
   icon: 'Emerald ore'
   icon-data: 0
   icon-lore:
@@ -126,6 +127,7 @@ Zombie:
   - 'Weak Flesh'
   - 'Infectious'
   - 'Friendly Undead'
+  - 'Reviveable'
   icon: 'Rotten flesh'
   icon-data: 0
   icon-lore:
