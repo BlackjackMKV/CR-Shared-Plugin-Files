@@ -50,7 +50,7 @@ Arcanic Golem:
   skills:
   - 'Iron Skin'
   - 'Iron Stomach'
-  - 'Iron Heart'
+  - 'Mecha Munchies'
   icon: 'Iron block'
   icon-data: 0
   icon-lore:
@@ -88,6 +88,7 @@ Fae:
   - 'Fairy Wings'
   - 'Tiny Body'
   - 'Base Weakness'
+  - 'Fae Beauty'
   icon: 'Emerald ore'
   icon-data: 0
   icon-lore:
@@ -126,7 +127,82 @@ Zombie:
   - 'Weak Flesh'
   - 'Infectious'
   - 'Friendly Undead'
+  - 'Reviveable'
   icon: 'Rotten flesh'
+  icon-data: 0
+  icon-lore:
+  - '&dClass 1'
+  blacklist:
+  - ''
+  action-bar: ''
+  attributes:
+    health-base: 20
+    health-scale: 0
+    mana-base: 20
+    mana-scale: 0
+    vitality-base: 0
+    vitality-scale: 0
+    spirit-base: 0
+    spirit-scale: 0
+    intelligence-base: 0
+    intelligence-scale: 0
+    dexterity-base: 0
+    dexterity-scale: 0
+    strength-base: 0
+    strength-scale: 0
+Slime:
+  name: 'Slime'
+  prefix: '&6S'
+  group: 'Race'
+  mana: '&2Mana'
+  max-level: 1
+  parent: ''
+  needs-permission: 'False'
+  exp-source: 273
+  mana-regen: 1
+  tree: 'Requirement'
+  skills:
+  - 'Bouncy'
+  - 'Soluble'
+  - 'Predator'
+  icon: 'Jack o lantern'
+  icon-data: 0
+  icon-lore:
+  - '&dClass 1'
+  blacklist:
+  - ''
+  action-bar: ''
+  attributes:
+    health-base: 20
+    health-scale: 0
+    mana-base: 20
+    mana-scale: 0
+    vitality-base: 0
+    vitality-scale: 0
+    spirit-base: 0
+    spirit-scale: 0
+    intelligence-base: 0
+    intelligence-scale: 0
+    dexterity-base: 0
+    dexterity-scale: 0
+    strength-base: 0
+    strength-scale: 0
+Demon:
+  name: 'Demon'
+  prefix: '&6D'
+  group: 'Race'
+  mana: '&2Mana'
+  max-level: 1
+  parent: ''
+  needs-permission: 'False'
+  exp-source: 273
+  mana-regen: 1
+  tree: 'Requirement'
+  skills:
+  - 'Hellspawn'
+  - 'Brimstone'
+  - 'Ignition'
+  icon: 'Jack o lantern'
   icon-data: 0
   icon-lore:
   - '&dClass 1'
